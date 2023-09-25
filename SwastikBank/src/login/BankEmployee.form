@@ -280,6 +280,8 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="User_Id">
                       <Events>
+                        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="User_IdFocusGained"/>
+                        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="User_IdFocusLost"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="User_IdActionPerformed"/>
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="User_IdKeyTyped"/>
                       </Events>
@@ -310,7 +312,7 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="sign_up_B">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Sign Up"/>
+                        <Property name="text" type="java.lang.String" value="New User ?"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sign_up_BActionPerformed"/>

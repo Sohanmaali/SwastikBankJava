@@ -15,6 +15,7 @@ public class BankEmployee extends javax.swing.JFrame {
     public BankEmployee() {
         initComponents();
         capcha.setText(Operation.ganrateCapcha());
+        massage.setVisible(false);
     }
 
     /**
@@ -107,6 +108,14 @@ public class BankEmployee extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel16.setText("Password");
 
+        User_Id.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                User_IdFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                User_IdFocusLost(evt);
+            }
+        });
         User_Id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 User_IdActionPerformed(evt);
@@ -131,7 +140,7 @@ public class BankEmployee extends javax.swing.JFrame {
             }
         });
 
-        sign_up_B.setText("Sign Up");
+        sign_up_B.setText("New User ?");
         sign_up_B.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sign_up_BActionPerformed(evt);
@@ -416,9 +425,11 @@ public class BankEmployee extends javax.swing.JFrame {
 
     private void login_BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_BActionPerformed
 
-        if (true) {
+        if (capcha_Fill.getText().equals(capcha.getText())) {
 
         } else {
+            massage.setText("Invalide Captch");
+            massage.setVisible(true);
             JOptionPane.showMessageDialog(null, "Please Fill All the blanks");
         }
 
@@ -443,6 +454,15 @@ public class BankEmployee extends javax.swing.JFrame {
             evt.consume(); // Consume digit characters
         }
     }//GEN-LAST:event_User_IdKeyTyped
+
+    private void User_IdFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_User_IdFocusGained
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_User_IdFocusGained
+
+    private void User_IdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_User_IdFocusLost
+
+    }//GEN-LAST:event_User_IdFocusLost
 
     /**
      * @param args the command line arguments
